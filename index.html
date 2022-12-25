@@ -1,37 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
 
         //1
         let name = prompt('Enter your name');
-        for (let i = 0; i < 1; i++) {
-            console.log(`Happy birthday to you \nHappy birthday to you \nHappy birthday, dear ${name} \nHappy birthday to you`)};
+        let someStr = '';
+        for (i = 1; i <= 4; i++) {
+            if (i == 3) {
+                someStr += `Happy birthday, dear ${name} \n`;
+            } else {
+                someStr += 'Happy birthday to you \n';
+            };
+        };
+        console.log(someStr);
+
 
         //2
         let symbol = +prompt('Enter a number, please');
         let str = '.#';
-        for (let i = 0; i<1; i++) {
+        for (let i = 0; i < 1; i++) {
             console.log(str.repeat(symbol))
         };
+        
 
         //3
-        let someNumber = +prompt('Enter some number');
+        let num = +prompt("Enter number");
         let sum = 0;
-        if (isNaN(someNumber)) {
-            someNumber = +prompt('Invalid. You should enter a number')
-        };
-        for (i = 0; i < someNumber; i++){
-            if (i % 2 !== 0) {
-                sum += i;
-            };
-        };
+        while (isNaN(num)) num = +prompt("Invalid. You should enter a number");
+        {
+            for (let i = num; i > 0; i -= 1) {
+                if (i % 2) {
+                    sum = sum + i;
+                }
+            }
+            num++;
+        }
         console.log(sum);
 
         //4
@@ -61,7 +73,8 @@
         //6
         let date = new Date();
         console.log(date);
- 
+
     </script>
 </body>
+
 </html>
